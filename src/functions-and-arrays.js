@@ -99,7 +99,7 @@ function sum(array){
 //     if (typeof element === "object"){
 //       throw new Error("Unsupported data type");
 //       return;
-//     } if(typeof element === "string")sum += element.length;
+//     } if(typeof element === "string") sum += element.length;
 //     } else {
 //       sum += element;
 //     }
@@ -128,7 +128,16 @@ function averageNumbers(numbers) {
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(strings) { 
+  if(!strings.length){
+    return null;
+  let wordLength = [];
+  for (let words of strings){
+    wordLength.push(words.length);
+  }
+  return averageWordLength(wordLength);
+}
+}
 
 // Bonus - Iteration #4.1
 function avg() {}
