@@ -56,6 +56,7 @@ const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 //   return sum;
 // }
 
+//3.1
 function sumNumbers(numbers) {
   let total = 0;
   for( let i = 0; i < numbers.length; i++){
@@ -64,31 +65,52 @@ function sumNumbers(numbers) {
     return total;
     }
 
-// Iteration #3.1 Bonus:
-function sum(array) {
-  let totalSum = 0;
-  for(let i = 0; i < array .length; i++){
-  totalSum += array[i];
-  }
-  return totalSum;
+// Iteration #3.2 Bonus:
+
+// function sum(array) {
+//   let totalSum = 0;
+//   for(let i = 0; i < array.length; i++){
+//   totalSum += array[i];
+//   }
+//   return totalSum;
+// }
+// function sum(array){
+//   let counter = 0;
+//   for(let i = 0; i < array.length; i++) {
+//     if (typeof(array[i]) == "string") {
+//       counter += array[i].length;
+//     } else if (typeof(array[i]) == "number") {
+//       counter += array[i];
+//     } else if (typeof(array[i]) == "boolean") {
+//         if (array[i]){
+//             counter += 1;
+//         } else {
+//             counter += 0;
+//           }
+//     }
+//   }
+//   return counter;
+//   }
+
+function sum(mixedArr) {
+  let sum = 0;
+ 
+  mixedArr.forEach((zeroArr) => {
+      
+      if(typeof zeroArr === "number"){
+       sum += zeroArr;  
+      }else if(zeroArr === true){
+       sum += 1;       
+      }else if(zeroArr === false){
+       sum += 0;
+      }else if(typeof zeroArr === "string"){
+       sum += zeroArr.length;
+      }else {
+        throw new Error("Unsupported data type sir or ma'am");
+      }
+  })
+  return sum;
 }
-function sum(array){
-  let counter = 0;
-  for(let i = 0; i < array.length; i++) {
-    if (typeof(array[i]) == "string") {
-      counter += array[i].length;
-    } else if (typeof(array[i]) == "number") {
-      counter += array[i];
-    } else if (typeof(array[i]) == "boolean") {
-        if (array[i]){
-            counter += 1;
-        } else {
-            counter += 0;
-          }
-    }
-  }
-  return counter;
-  }
 
 // function sum(array){
 //   if (!array){
@@ -109,7 +131,6 @@ function sum(array){
 
 
 // Iteration #4: Calculate the average
-// Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageNumbers(numbers) {
@@ -125,22 +146,50 @@ function averageNumbers(numbers) {
 }
 
 
+// Notes from class 
+// function averageNumbers(numbers){
+//   let sumArray = 0;
+
+//   for(let i = 0; i < number.length; i++){
+//     sumArray += numbers[i];
+//   }
+//   return sumArray/array.length;
+// }
+
+
+//notes from class another way to do it:
+function averageNumbers(numbers){
+  if(array.length === 0){
+    return null;
+  }
+  return sumNumbers(numbers)/numbers.length;
+}
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength(strings) { 
-  if(!strings.length){
-    return null;
-  let wordLength = [];
-  for (let words of strings){
-    wordLength.push(words.length);
+function averageWordLength(wordsArr){ 
+  if(!wordsArr.length){
+    return null;}
+  
+  let total = 0;
+  for(let i = 0; i < wordsArr.length; i++){
+    total += wordsArr[i].length;
   }
-  return averageWordLength(wordLength);
-}
+  return total/wordsArr.length;
 }
 
 // Bonus - Iteration #4.1
-function avg() {}
+function avg(array) { 
+  if (array.length === 0){
+  return null;
+} else {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++){
+    sum += array[i];
+  }
+    return sum/array.length;
+}
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -157,7 +206,12 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(array) {
+  if(!array.length){
+    return null;
+  }
+  const findDuplicates = 
+}
 
 
 
