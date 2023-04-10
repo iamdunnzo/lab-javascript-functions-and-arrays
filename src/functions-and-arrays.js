@@ -159,7 +159,7 @@ function averageNumbers(numbers) {
 
 //notes from class another way to do it:
 function averageNumbers(numbers){
-  if(array.length === 0){
+  if(numbers.length === 0){
     return null;
   }
   return sumNumbers(numbers)/numbers.length;
@@ -210,7 +210,14 @@ function uniquifyArray(array) {
   if(!array.length){
     return null;
   }
-  const findDuplicates = 
+
+  let newArray = [];
+  for(let i = 0; i < array.length; i++){
+    if(newArray.indexOf(array[i]) < 0){
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
 }
 
 
